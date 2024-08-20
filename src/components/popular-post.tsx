@@ -7,7 +7,7 @@ const PopularPost = () => {
     <div className='mt-10'>
         {
             popularPosts.map((post) => (
-                <div className='flex items-center gap-2 py-2 group'>
+                <div key={post.title} className='flex items-center gap-2 py-2 group'>
                     <Icons.arrowRight className="h-6 w-6 group-hover:translate-x-1 transition-all"/>
                     {post.title}
                 </div>
