@@ -8,7 +8,7 @@ export async function GET() {
             select: { slug: true, title: true, category: true },
             take: 5, // Example: fetch the top 5 most popular posts
         });
-        console.log("popularPosts", popularPosts);
+        
         return NextResponse.json(popularPosts);
 
         // return new Response(JSON.stringify(popularPosts), { status: 200 });

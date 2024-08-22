@@ -30,7 +30,7 @@ const PopularPost = () => {
   if (error) {
     return <div>{error.message}</div>;
   }
-  console.log(data);
+ 
   return (
     <div className="mt-10">
       {data.map((post: { title: string; slug: string; category: string }) => (
