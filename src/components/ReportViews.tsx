@@ -1,24 +1,34 @@
-"use client"
-import { fetchUrl } from '@/lib/utils'
-import React, { useEffect } from 'react'
+"use client";
 
-const ReportViews = ({slug, title, category}: {slug: string, title: string, category: string}) => {
-    useEffect(() => {
-        try {
-            fetch(fetchUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({slug, title, category}),
-            })
-        } catch (error) {
-            console.log(error)
-        }
-    }, [slug, title, category])
-  return (
-    <></>
-  )
+import { fetchUrl } from "@/lib/utils";
+import { useEffect } from "react";
+
+export default function ReportViews({
+  slug,
+  title,
+  category,
+}: {
+  slug: string;
+  title: string;
+  category: string;
+}) {
+    
+  useEffect(() => {
+    const postData = async () => {
+      try {
+        await fetch("/api/popular-posts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ slug, title, category }),
+        });
+      } catch (error) {
+        console.log("Something is up...", error);
+      }
+    };
+   
+    postData();
+  }, [category, slug, title]);
+  return <></>;
 }
-
-export default ReportViews

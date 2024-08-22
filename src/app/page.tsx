@@ -1,4 +1,4 @@
-import LatestPost from "@/components/home/latest-post";
+import LatestPost from "@/components/latest-post";
 import MainNav from "@/components/mainNav";
 import PopularPost from "@/components/popular-post";
 import TopCategory from "@/components/top-category";

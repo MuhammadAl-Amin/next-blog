@@ -32,7 +32,7 @@ const Page = ({ params }: { params: { category: string, slug: string } }) => {
       <div className='flex justify-between items-center mt-2 mb-4 text-sm'>
         <p className='text-sm text-neutral-600 dark:text-neutral-400 mt-2'>{formatDate(post.metadata.publishedAt)}</p>
       </div>
-      </Container>
+      </Container> 
       </Header>
         <div className='container mx-auto mt-12'>
         <Container>
